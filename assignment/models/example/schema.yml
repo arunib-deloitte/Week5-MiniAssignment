@@ -1,0 +1,50 @@
+
+version: 2
+
+models:
+
+  - name: qstn1
+    description: "Find top 10 users with the highest reputation"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: displayname
+        tests:
+          - not_null
+      - name: reputation
+
+  - name: qstn2
+    description: "Print the text of questions asked by user whose display name is alexandrul" 
+    columns: 
+      - name: questions
+  
+  - name: qstn3
+    description: "Print the text of questions asked by user whose display name contains the string nau"
+    columns:
+      - name: questions
+
+  - name: qstn4
+    description: "Print the 10 most popular badges, sorted by the number of users who have these badges"
+    columns:
+      - name: name
+        tests:
+          - unique
+      - name: no_of_users
+        tests:
+          - not_null
+
+  - name: qstn5
+    description: "For users who have a reputation greater than 75000, print their userid, displayname, reputation and the total number of questions they have asked."
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: displayname
+        tests:
+          - not_null
+      - name: reputation
+      - name: no_of_qstns
+
+ 
